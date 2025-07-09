@@ -1,0 +1,10 @@
+<h1>Savat</h1>
+<ul>
+    {% for item in items %}
+        <li>
+            {{ item.food.name }} - {{ item.quantity }} x ${{ item.food.price }} = ${{ item.total }}
+            <a href="{% url 'remove_from_cart' item.food.id %}">O'chirish</a>
+        </li>
+    {% endfor %}
+</ul>
+<p>Jami: ${{ total }}</p>

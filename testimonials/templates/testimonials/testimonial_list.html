@@ -1,0 +1,12 @@
+<h1>Mijozlar Fikrlari</h1>
+
+{% for t in testimonials %}
+    <div style="margin-bottom: 30px;">
+        {% if t.image %}
+            <img src="{{ t.image.url }}" width="100" style="border-radius: 50%;">
+        {% endif %}
+        <h3>{{ t.name }}</h3>
+        <p>"{{ t.comment }}"</p>
+        <small>{{ t.created_at|date:"Y-m-d H:i" }}</small>
+    </div>
+{% endfor %}
